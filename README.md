@@ -14,6 +14,10 @@
 
 ### react router
 
+### react Acordians
+
+### react hot toast
+
 ### react icons
 
 ### react Tailwind css fremwork
@@ -25,6 +29,8 @@
 ### .\_First: first compleate basic project layout skelitin. some basic work set up logo, fave icon, Context api, hole project layouts, private route, react routes.
 
 ### .\_Secound: butify basic scelitin set the main project logo.
+
+### .\_Third: set up toogle button.
 
 # this is React Official Requirements
 
