@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { BsPersonCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import Logo from '../../Assests/Logo/Logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,8 +11,7 @@ const Header = () => {
         <div className="lg:flex lg:items-center">
           <div className="flex items-center justify-between">
             <div>
-              <Link className="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to='/'><span className='bg-green-700 p-1 rounded-md text-white'>MANIA</span> NEWS
-              </Link>
+              <Link className="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to='/'><img className='h-[40px]' src={Logo} alt="mania course logo" /></Link>
             </div>
 
 

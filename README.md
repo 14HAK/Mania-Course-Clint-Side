@@ -1,6 +1,14 @@
 # Project Requirements:
 
-# NPM Pakages:
+## Project Owner:
+
+### Author: Dulon Mahadi.
+
+### Project_NAme: MANIA_Course.
+
+### Project Flow: Learning Technology Of computer Programming.
+
+## NPM Pakages:
 
 ### own react-app
 
@@ -14,7 +22,11 @@
 
 ## Project Description:
 
-### .think 1: first compleate basic project layout skelitin. some basic work set up logo, fave icon, Context api, hole project layouts, private route, react routes.
+### .\_First: first compleate basic project layout skelitin. some basic work set up logo, fave icon, Context api, hole project layouts, private route, react routes.
+
+### .\_Secound: butify basic scelitin set the main project logo.
+
+# this is React Official Requirements
 
 # Getting Started with Create React App
 
