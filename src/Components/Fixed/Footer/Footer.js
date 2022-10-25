@@ -13,7 +13,7 @@ const Footer = () => {
                 <Link className="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to='/'><img className='h-[40px]' src={Logo} alt="mania course logo" /></Link>
               </div>
 
-              <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
+              <p className="max-w-sm mt-2 text-start text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
 
               <div className="flex mt-6 -mx-2">
                 <a href="#"
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-6 lg:mt-0 lg:flex-1">
+          <div className="mt-6 lg:mt-0 lg:flex-1 text-start">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               <div>
                 <h3 className="text-gray-700 uppercase dark:text-white">About</h3>
@@ -74,7 +74,7 @@ const Footer = () => {
 
               <div>
                 <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">+1 526 654 8965</span>
+                <span className="block mt-2 text-sm text-gray-600 rounded-sm p-2 dark:text-gray-400  hover:underline">+1 526 654 8965</span>
                 <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
               </div>
             </div>
