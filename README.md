@@ -32,6 +32,8 @@
 
 ### .\_Third: set up toogle button.
 
+### .\_Fourth: load data using featch behind the catagories component and display all catagories.
+
 # this is React Official Requirements
 
 # Getting Started with Create React App

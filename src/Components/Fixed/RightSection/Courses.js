@@ -3,7 +3,7 @@ import React from 'react';
 const Courses = () => {
 
   return (
-    <div className='grid grid-cols-3 gap-2 p-2'>
+    <div className='grid grid-cols-3 gap-2 p-6'>
 
 
       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
@@ -15,6 +15,7 @@ const Courses = () => {
             <button className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">Add to cart</button>
           </div>
         </div>
+
       </div>
 
 
