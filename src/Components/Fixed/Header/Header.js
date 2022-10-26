@@ -65,7 +65,8 @@ const Header = () => {
             <div className="flex justify-center items-center lg:flex lg:mt-0 lg:-mx-2">
 
               {
-                user ?
+                user && user.emailVerified
+                  ?
                   <>
                     <Link><button onClick={handleSignOut} className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-slate-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-green-700 hover:text-white focus:outline-none">
                       Sign Out

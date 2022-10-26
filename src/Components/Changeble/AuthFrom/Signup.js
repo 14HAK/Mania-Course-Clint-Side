@@ -6,7 +6,7 @@ import { AuthContext } from '../../../ContextApi/ContextApi';
 const Signup = () => {
   const [errorMsg, setErrorMsg] = useState()
   const [successMsg, setSuccessMsg] = useState(null)
-  const { CreateNewUser, UpdateUserProfile } = useContext(AuthContext)
+  const { CreateNewUser, UpdateUserProfile, UserVarification } = useContext(AuthContext)
 
   const handleSignupForm = (event) => {
     event.preventDefault();
@@ -32,7 +32,8 @@ const Signup = () => {
         console.log(user);
         setSuccessMsg('Wellcome, Successfully Created Account.')
         callbackHandleUpdateProfile(name, photoURL)
-        toast.success('welcome, Please check your email and verify mania course user account.')
+        callbackVerifyUser()
+        toast.success('welcome, Please check your email and must verify your account.')
         form.reset()
       })
       .catch(err => {
@@ -48,7 +49,11 @@ const Signup = () => {
     UpdateUserProfile(profile)
       .then(() => { })
       .catch(() => { })
+  }
 
+  const callbackVerifyUser = () => {
+    UserVarification()
+      .then(() => { })
   }
 
 

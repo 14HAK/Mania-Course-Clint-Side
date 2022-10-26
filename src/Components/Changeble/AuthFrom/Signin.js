@@ -17,7 +17,11 @@ const Signin = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        toast.success('Successfully Signin.');
+        if (user.emailVerified) {
+          toast.success('Successfully Signin.');
+        } else {
+          toast.error('Please Verify Your Account.');
+        }
         form.reset()
       })
       .catch((error) => {
