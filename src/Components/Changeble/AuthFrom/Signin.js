@@ -2,19 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Signin = () => {
+
+  const handleSignin = (event) => {
+
+  }
+
+
   return (
     <div>
       <div>
         <div className="w-full my-10 max-w-sm p-6 m-auto mx-auto bg-slate-100 rounded-md shadow-md dark:bg-gray-800">
 
-          <form className="mt-6">
+          <form onSubmit={handleSignin} className="mt-6">
             <div className="mt-4">
               <div className="flex items-center justify-between">
                 <label htmlFor="email" className="block text-sm text-gray-800 dark:text-gray-200">User-Email</label>
 
               </div>
 
-              <input type="email" name='email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+              <input type="email" name='email' id='email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
             </div>
 
             <div className="mt-4">
@@ -23,7 +29,7 @@ const Signin = () => {
                 <Link to={''} className="text-xs text-gray-600 dark:text-gray-400 hover:underline">Forget Password?</Link>
               </div>
 
-              <input type="password" name='password' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+              <input type="password" name='password' id='password' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
             </div>
 
             <div className="mt-6">

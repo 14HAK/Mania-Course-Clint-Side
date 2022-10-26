@@ -1,31 +1,71 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../ContextApi/ContextApi';
 
 const Signup = () => {
+  const [errorMsg, setErrorMsg] = useState()
+  const [successMsg, setSuccessMsg] = useState(null)
+  const { CreateNewUser } = useContext(AuthContext)
+
+  const handleSignupForm = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.username.value;
+    const photoURL = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+
+    if (password.length !== 6) {
+      setErrorMsg('Password should be 6 caracter.')
+      return;
+    }
+    if (password !== confirmPassword) {
+      setErrorMsg('Password not matched.')
+      return;
+    }
+
+    CreateNewUser(email, password)
+      .then(res => {
+        const user = res.user;
+        console.log(user);
+        setSuccessMsg('Wellcome, Successfully Created Account.')
+        toast.success('welcome!')
+        form.reset()
+      })
+      .catch(err => {
+        setErrorMsg(err.message)
+      })
+
+
+  }
+
+
   return (
     <div>
       <div className="w-full my-10 max-w-sm p-6 m-auto mx-auto bg-slate-100 rounded-md shadow-md dark:bg-gray-800">
 
-        <form className="mt-6">
+        <form onSubmit={handleSignupForm} className="mt-6">
           <div className="mt-4">
             <div className="flex items-center justify-between">
               <label htmlFor="username" className="block text-sm text-gray-800 dark:text-gray-200">User-Name</label>
             </div>
-            <input type="text" name='username' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <input type="text" name='username' id='username' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
           </div>
 
           <div className="mt-4">
             <div className="flex items-center justify-between">
               <label htmlFor="photo" className="block text-sm text-gray-800 dark:text-gray-200">Photo-URL</label>
             </div>
-            <input type="text" name='photo' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <input type="text" name='photo' id='photo' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
           </div>
 
           <div className="mt-4">
             <div className="flex items-center justify-between">
               <label htmlFor="email" className="block text-sm text-gray-800 dark:text-gray-200">Email</label>
             </div>
-            <input type="email" name='email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <input type="email" name='email' required id='email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
           </div>
 
           <div className="mt-4">
@@ -33,7 +73,22 @@ const Signup = () => {
               <label htmlFor="password" className="block text-sm text-gray-800 dark:text-gray-200">Password</label>
             </div>
 
-            <input type="password" name='password' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+            <input type="password" name='password' id='password' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+          </div>
+
+          <div className="mt-4">
+            <div className="flex items-center justify-between">
+              <label htmlFor="confirmPassword" className="block text-sm text-gray-800 dark:text-gray-200">Confirm Password</label>
+            </div>
+
+            {
+              successMsg ?
+                <p className='py-1 text-xs text-green-600'>{successMsg}</p>
+                :
+                <p className='py-1 text-xs text-red-500'>{errorMsg}</p>
+            }
+
+            <input type="password" name='confirmPassword' id='confirmPassword' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
           </div>
 
           <div className="flex flex-col">
