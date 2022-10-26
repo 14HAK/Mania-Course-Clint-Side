@@ -34,6 +34,10 @@
 
 ### .\_Fourth: load data using featch behind the catagories component and display all catagories.
 
+### .\_Fifth: set home route to display latest course and load latest data.
+
+#--------------------------------------------------------------------------------------------------
+
 # this is React Official Requirements
 
 # Getting Started with Create React App

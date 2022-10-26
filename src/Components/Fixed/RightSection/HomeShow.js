@@ -2,10 +2,8 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleCourse from './SingleCourse';
 
-const Courses = () => {
+const HomeShow = () => {
   const data = useLoaderData()
-  console.log(data);
-
   return (
     <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-4 p-6'>
 
@@ -16,8 +14,7 @@ const Courses = () => {
         ></SingleCourse>)
       }
 
-    </div>
-  );
+    </div>);
 };
 
-export default Courses;
+export default HomeShow;
