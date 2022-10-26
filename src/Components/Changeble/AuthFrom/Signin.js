@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { BsGithub, BsGoogle } from 'react-icons/bs';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../ContextApi/ContextApi';
 
 const Signin = () => {
-  const { SigninUser, setLoading } = useContext(AuthContext)
+  const { SigninUser, setLoading, GoogleSignin, GithubSignin } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/';
@@ -33,9 +34,36 @@ const Signin = () => {
       .finally(() => {
         setLoading(false)
       })
-
   }
 
+  const handleGoogle = () => {
+    GoogleSignin()
+      .then((res) => {
+        toast.success('Google signin successfull')
+        navigate(from, { replace: true })
+      })
+      .catch(err => {
+        toast.error('Signin faild, Try again.')
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
+  const handleGithub = () => {
+    GithubSignin()
+      .then(res => {
+        toast.success('Github signin successfull')
+        navigate(from, { replace: true })
+      })
+      .catch(err => {
+        toast.error('Signin faild, Try again.')
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+
+  }
 
   return (
     <div>
@@ -74,11 +102,20 @@ const Signin = () => {
           <div className="flex items-center justify-between ">
             <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
 
-            <Link to={''} className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
+            <Link className="text-xs mt-2 text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">
               or login with Social Media
             </Link>
-
             <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
+          </div>
+
+          <div className='flex justify-between items-center'>
+            <button onClick={handleGoogle} className="w-[49%] flex justify-center items-center mt-2 px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none">
+              <BsGoogle className='mr-2'></BsGoogle> Google
+            </button>
+
+            <button onClick={handleGithub} className="w-[49%] flex justify-center items-center mt-2 px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-slate-700 rounded-md hover:bg-slate-600 focus:outline-none">
+              <BsGithub className='mr-2'></BsGithub> Github
+            </button>
           </div>
 
           <p className="mt-8 text-xs font-light text-center text-gray-400"> Don't have an account?

@@ -12,7 +12,7 @@ const Catagory = () => {
 
   }, [])
   return (
-    <div className='py-4'>
+    <div className='lg:py-4 lg:text-left text-center '>
       <p className='text-xl text-green-900 font-semibold'>Learning Projects</p>
       <hr className='mr-6' />
       {

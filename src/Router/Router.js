@@ -43,8 +43,7 @@ const routes = createBrowserRouter([
       { path: '/signin', element: <Signin></Signin> },
       { path: '/signup', element: <Signup></Signup> }
     ]
-
-  }
+  },
 ])
 
 export { routes };

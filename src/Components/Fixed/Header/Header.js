@@ -84,7 +84,7 @@ const Header = () => {
                     {
 
                       user?.photoURL ?
-                        <div data-tip={user.email} className="flex items-center justify-center w-10 h-10 overflow-hidden border border-green-900 rounded-full">
+                        <div data-tip={user.displayName} className="flex items-center justify-center w-10 h-10 overflow-hidden border border-green-900 rounded-full">
                           <img src={user.photoURL} alt='' />
                         </div>
                         :
