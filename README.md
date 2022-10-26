@@ -26,15 +26,11 @@
 
 ## Project Description:
 
-### .\_First: first compleate basic project layout skelitin. some basic work set up logo, fave icon, Context api, hole project layouts, private route, react routes.
+### 1: Make sure your design and website idea are unique. First, finalize your idea (What type of website do you want to build). Then google the site design or visit ThemeForest to get your website idea. However, your website can not relate to your previous assignments or any demo project displayed in the course or our conceptual sessions. [task compleate]
 
-### .\_Secound: butify basic scelitin set the main project logo.
+### 2: Give your website a name. The name should appear on the website and be displayed on the website's title. [task compleate]
 
-### .\_Third: set up toogle button.
-
-### .\_Fourth: load data using featch behind the catagories component and display all catagories.
-
-### .\_Fifth: set home route to display latest course and load latest data.
+### 3: It will contain a navbar with the options: website logo, website name, Courses, FAQ, Blog, toggle theme (dark/ light), and User Profile Picture (or login). The user profile picture on the navbar is conditional. If the user is signed in, the navbar will show the profile pic. The user's name will be visible when the mouse is in the picture. [task compleate]
 
 #--------------------------------------------------------------------------------------------------
 

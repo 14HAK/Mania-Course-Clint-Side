@@ -32,10 +32,11 @@ const Header = () => {
 
           <div x-cloak className={`${isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full'} absolute inset-x-0 z-20 flex-1 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center lg:justify-between `} >
             <div className="flex flex-col text-gray-600 capitalize dark:text-gray-300 lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
-              <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">features</Link>
-              <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">downloads</Link>
-              <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">docs</Link>
-              <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">support</Link>
+              <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-green-900 font-semibold">Course</Link>
+
+              <Link to='/faq' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-green-900 font-semibold">FAQ</Link>
+
+              <Link to='/blog' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-green-900 font-semibold">Blog</Link>
 
             </div>
             <>
@@ -49,38 +50,36 @@ const Header = () => {
 
             <div className="flex justify-center items-center lg:flex lg:mt-0 lg:-mx-2">
 
+
               {/* {
-                true ?
-                  <>
-                    <Link><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                      Sign Out
-                    </button></Link>
+                <>
+                  <Link><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                    Sign Out
+                  </button></Link>
 
-                    <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">
-                      kodom ali</Link>
-
-
-                    <div className="flex items-center justify-center w-10 h-10 overflow-hidden rounded-full">
-                      <img src='https://ds.rokomari.store/rokomari110/people/4e5136be1_15572.jpg' alt='' />
-                    </div>
-
-                    <BsPersonCircle className='w-10 h-10' />
+                  <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">
+                    kodom ali</Link>
 
 
-                  </>
-                  :
-                  <>
-                    <Link to='/signin'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                      Sign In
-                    </button></Link>
+                  <div className="flex items-center justify-center w-10 h-10 overflow-hidden rounded-full">
+                    <img src='https://ds.rokomari.store/rokomari110/people/4e5136be1_15572.jpg' alt='' />
+                  </div>
 
-                    <Link to='/signup'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                      Sign Up
-                    </button></Link>
+                  <BsPersonCircle className='w-10 h-10' />
 
-                  </>
+                </>
+
+                <>
+                  <Link to='/signin'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                    Sign In
+                  </button></Link>
+
+                  <Link to='/signup'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                    Sign Up
+                  </button></Link>
+
+                </>
               } */}
-
 
 
 

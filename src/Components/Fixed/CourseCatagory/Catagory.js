@@ -13,6 +13,8 @@ const Catagory = () => {
   }, [])
   return (
     <div className='py-4'>
+      <p className='text-xl text-green-900 font-semibold'>Learning Projects</p>
+      <hr className='mr-6' />
       {
         catagories.map(catagory => <SingleCatagory
           key={catagory.id}

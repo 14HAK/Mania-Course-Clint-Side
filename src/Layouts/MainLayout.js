@@ -11,12 +11,12 @@ const MainLayout = () => {
 
       <div className="mainPart grid grid-cols-12">
 
-        <div className="left col-span-3 py-3 px-[62px] text-start bg-slate-100">
-          <Catagory></Catagory>
-        </div>
-
         <div className="right col-span-9 p-3 bg-gray-200">
           <Outlet></Outlet>
+        </div>
+
+        <div className="left col-span-3 py-3 px-[62px] text-start bg-slate-100">
+          <Catagory></Catagory>
         </div>
 
       </div>
