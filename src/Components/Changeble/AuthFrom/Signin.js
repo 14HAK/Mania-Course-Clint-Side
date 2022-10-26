@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../ContextApi/ContextApi';
 
 const Signin = () => {
 
+  const { SigninUser } = useContext(AuthContext)
+
   const handleSignin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    SigninUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        toast.success('Successfully Signin.');
+        form.reset()
+      })
+      .catch((error) => {
+        toast.error('Wrong Password!');
+      });
 
   }
 
@@ -20,7 +39,7 @@ const Signin = () => {
 
               </div>
 
-              <input type="email" name='email' id='email' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+              <input type="email" name='email' id='email' required className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
             </div>
 
             <div className="mt-4">

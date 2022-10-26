@@ -31,7 +31,7 @@ const Signup = () => {
         const user = res.user;
         console.log(user);
         setSuccessMsg('Wellcome, Successfully Created Account.')
-        toast.success('welcome!')
+        toast.success('welcome, Please check your email and verify mania course user account.')
         form.reset()
       })
       .catch(err => {
