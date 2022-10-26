@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../ContextApi/ContextApi';
 
 const Signin = () => {
-
-  const { SigninUser } = useContext(AuthContext)
+  const { SigninUser, setLoading } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/';
 
   const handleSignin = (event) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ const Signin = () => {
         console.log(user);
         if (user.emailVerified) {
           toast.success('Successfully Signin.');
+          navigate(from, { replace: true })
         } else {
           toast.error('Please Verify Your Account.');
         }
@@ -26,7 +29,10 @@ const Signin = () => {
       })
       .catch((error) => {
         toast.error('Wrong Password!');
-      });
+      })
+      .finally(() => {
+        setLoading(false)
+      })
 
   }
 

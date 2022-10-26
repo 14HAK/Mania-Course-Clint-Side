@@ -6,7 +6,7 @@ import { AuthContext } from '../../../ContextApi/ContextApi';
 const Signup = () => {
   const [errorMsg, setErrorMsg] = useState()
   const [successMsg, setSuccessMsg] = useState(null)
-  const { CreateNewUser, UpdateUserProfile, UserVarification } = useContext(AuthContext)
+  const { CreateNewUser, UpdateUserProfile, UserVarification, setLoading } = useContext(AuthContext)
 
   const handleSignupForm = (event) => {
     event.preventDefault();
@@ -38,6 +38,9 @@ const Signup = () => {
       })
       .catch(err => {
         setErrorMsg(err.message)
+      })
+      .finally(() => {
+        setLoading(false)
       })
   }
 

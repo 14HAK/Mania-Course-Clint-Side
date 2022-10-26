@@ -9,6 +9,7 @@ import HomeShow from "../Components/Fixed/RightSection/HomeShow";
 import Notfound from "../Components/NotFound/Notfound";
 import Layout2 from "../Layouts/Layout2";
 import MainLayout from "../Layouts/MainLayout";
+import PrivateCom from "../PrivateRouteComponent/PrivateCom";
 
 const routes = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const routes = createBrowserRouter([
       {
         path: '/detail/:id',
         loader: ({ params }) => fetch(`http://localhost:5000/detail/${params.id}`),
-        element: <CourseDetails></CourseDetails>
+        element: <PrivateCom><CourseDetails></CourseDetails></PrivateCom>
       }
     ]
   },
