@@ -1,12 +1,23 @@
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { BsPersonCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../ContextApi/ContextApi';
 import Logo from '../../Assests/Logo/Logo.png';
 
 const Header = () => {
-  const { user } = useContext(AuthContext)
-  const [isOpen, setIsOpen] = useState(false)
+  const { user, SignoutUser } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSignOut = () => {
+    SignoutUser()
+      .then(() => {
+        toast.success('Signout Success.')
+      }).catch((error) => {
+        toast.error('User not Signout!')
+      });
+  }
+
   return (
     <nav x-data="{ isOpen: false }" className="bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-4 mx-auto">
@@ -45,7 +56,7 @@ const Header = () => {
             <>
               <label htmlFor="AcceptConditions" className="relative left-[100px] h-6 w-12 cursor-pointer">
                 <input type="checkbox" id="AcceptConditions" className="peer sr-only" />
-                <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-green-500" />
+                <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-green-800" />
                 <span className="absolute inset-0 m-1 h-4 w-4 rounded-full bg-white transition peer-checked:translate-x-6" />
               </label>
 
@@ -56,17 +67,17 @@ const Header = () => {
               {
                 user ?
                   <>
-                    <Link><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-slate-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-green-700 hover:text-white focus:outline-none">
+                    <Link><button onClick={handleSignOut} className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-slate-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-green-700 hover:text-white focus:outline-none">
                       Sign Out
                     </button></Link>
 
                     <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">
-                      {user.email}</Link>
-                    {/* user.displayName */}
+                      {user.displayName}</Link>
+
                     {
                       user?.photoURL ?
-                        <div className="flex items-center justify-center w-10 h-10 overflow-hidden rounded-full">
-                          <img src='https://ds.rokomari.store/rokomari110/people/4e5136be1_15572.jpg' alt='' />
+                        <div className="flex items-center justify-center w-10 h-10 overflow-hidden border border-green-900 rounded-full">
+                          <img src={user.photoURL} alt='' />
                         </div>
                         :
                         <BsPersonCircle className='w-10 h-10' />

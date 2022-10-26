@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase';
 
@@ -15,10 +15,17 @@ const ContextApi = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   }
 
+  const UpdateUserProfile = (profile) => {
+    return updateProfile(auth.currentUser, profile)
+  }
+
   const SigninUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
+  const SignoutUser = () => {
+    return signOut(auth)
+  }
 
   useEffect(() => {
 
@@ -35,7 +42,7 @@ const ContextApi = ({ children }) => {
 
   }, [])
 
-  const authInfo = { CreateNewUser, SigninUser, user }
+  const authInfo = { CreateNewUser, UpdateUserProfile, SigninUser, SignoutUser, user }
 
   return (
     <div>
