@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { BsPersonCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 import { AuthContext } from '../../../ContextApi/ContextApi';
 import Logo from '../../Assests/Logo/Logo.png';
 
@@ -28,8 +29,9 @@ const Header = () => {
         <div className="lg:flex lg:items-center">
           <div className="flex items-center justify-between">
             <div>
-              <Link className="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" to='/'><img className='h-[40px]' src={Logo} alt="mania course logo" /></Link>
+              <Link to='/' className="text-2xl font-bold text-gray-800 transition-colors duration-300 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"><img className='h-[40px]' src={Logo} alt="mania course logo" /></Link>
             </div>
+
 
 
             <div className="flex lg:hidden">
@@ -78,14 +80,15 @@ const Header = () => {
 
                     <Link to='/' className="mt-2 transition-colors duration-300 transform lg:mt-0 lg:mx-4 hover:text-gray-900 dark:hover:text-gray-200">
                       {user.displayName}</Link>
-
+                    <ReactTooltip />
                     {
+
                       user?.photoURL ?
-                        <div className="flex items-center justify-center w-10 h-10 overflow-hidden border border-green-900 rounded-full">
+                        <div data-tip={user.email} className="flex items-center justify-center w-10 h-10 overflow-hidden border border-green-900 rounded-full">
                           <img src={user.photoURL} alt='' />
                         </div>
                         :
-                        <BsPersonCircle className='w-10 h-10' />
+                        <BsPersonCircle data-tip={user.email} className='w-10 h-10' />
                     }
                   </>
                   :
