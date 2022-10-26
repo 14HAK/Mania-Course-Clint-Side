@@ -74,8 +74,8 @@ const Footer = () => {
 
               <div>
                 <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                <span className="block mt-2 text-sm text-gray-600 rounded-sm p-2 dark:text-gray-400  hover:underline">+1 526 654 8965</span>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">example@email.com</span>
+                <span className="block mt-2 text-sm text-gray-600 py-1 dark:text-gray-400  hover:underline">+880-1959028008</span>
+                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">dulonmolla88@gmail.com</span>
               </div>
             </div>
           </div>

@@ -68,18 +68,20 @@ const Header = () => {
                   <BsPersonCircle className='w-10 h-10' />
 
                 </>
+*/}
 
-                <>
-                  <Link to='/signin'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                    Sign In
-                  </button></Link>
 
-                  <Link to='/signup'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-blue-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                    Sign Up
-                  </button></Link>
 
-                </>
-              } */}
+              <>
+                <Link to='/signin'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-slate-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-green-700 hover:text-white focus:outline-none">
+                  Sign In
+                </button></Link>
+
+                <Link to='/signup'><button className="px-4 py-1 mr-2 font-medium tracking-wide text-slate-800 border border-slate-400 capitalize transition-colors duration-300 transform rounded-md hover:bg-green-700 hover:text-white focus:outline-none">
+                  Sign Up
+                </button></Link>
+
+              </>
 
 
 

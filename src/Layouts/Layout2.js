@@ -5,7 +5,7 @@ import Header from '../Components/Fixed/Header/Header';
 
 const Layout2 = () => {
   return (
-    <div>
+    <div className='bg-gray-200'>
       <div className="first"><Header></Header></div>
       <div className="main"><Outlet></Outlet></div>
       <div className="last"><Footer></Footer></div>

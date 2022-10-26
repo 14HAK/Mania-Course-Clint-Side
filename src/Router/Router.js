@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import Signin from "../Components/Changeble/AuthFrom/Signin";
+import Signup from "../Components/Changeble/AuthFrom/Signup";
 import Blog from "../Components/Changeble/Blog/Blog";
 import FAQ from "../Components/Changeble/FAQ/FAQ";
 import Courses from '../Components/Fixed/RightSection/Courses';
@@ -31,7 +33,9 @@ const routes = createBrowserRouter([
     element: <Layout2></Layout2>,
     children: [
       { path: '/faq', element: <FAQ></FAQ> },
-      { path: '/blog', element: <Blog></Blog> }
+      { path: '/blog', element: <Blog></Blog> },
+      { path: '/signin', element: <Signin></Signin> },
+      { path: '/signup', element: <Signup></Signup> }
     ]
 
   }
