@@ -53,6 +53,8 @@ const Signin = () => {
   const handleGithub = () => {
     GithubSignin()
       .then(res => {
+        const user = res.user;
+        console.log(user);
         toast.success('Github signin successfull')
         navigate(from, { replace: true })
       })
@@ -62,7 +64,6 @@ const Signin = () => {
       .finally(() => {
         setLoading(false)
       })
-
   }
 
   return (
