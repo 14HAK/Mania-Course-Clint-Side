@@ -18,17 +18,17 @@ const routes = createBrowserRouter([
     children: [
       {
         path: '/',
-        loader: () => fetch('http://localhost:5000/latest/course'),
+        loader: () => fetch('https://mania-course-server.vercel.app/latest/course'),
         element: <HomeShow></HomeShow>
       },
       {
         path: '/course/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+        loader: ({ params }) => fetch(`https://mania-course-server.vercel.app/course/${params.id}`),
         element: <Courses></Courses>
       },
       {
         path: '/detail/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/detail/${params.id}`),
+        loader: ({ params }) => fetch(`https://mania-course-server.vercel.app/${params.id}`),
         element: <PrivateCom><CourseDetails></CourseDetails></PrivateCom>
       }
     ]

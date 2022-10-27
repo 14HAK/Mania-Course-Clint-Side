@@ -6,7 +6,7 @@ const Catagory = () => {
 
   useEffect(() => {
 
-    fetch('http://localhost:5000/catagories')
+    fetch('https://mania-course-server.vercel.app/catagories')
       .then(res => res.json())
       .then(data => setCatagories(data))
 
